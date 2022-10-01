@@ -1,6 +1,6 @@
 # jPlus
 ## Syntax
-*Func*: *operator*|*a1*,*a2*;*operator*|*a1*,*a2*; ... *operator*|*a1*,*a2*
+### *Func*: *operator*|*a1*,*a2*;*operator*|*a1*,*a2*; ... *operator*|*a1*,*a2*
 No putting operators inside operators
 Only put the needed arguments 
 At The end of you code, make sure that there is no line brakes
