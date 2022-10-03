@@ -206,6 +206,17 @@ types = {
     },
     'E':function(list,index){ //Get an element from a list
         return list[index]
+    },
+    '+<':function(...arr){
+        newarr = [];
+        for(i in arr[0]){
+            sum = 0;
+            for(j in arr){
+                sum += arr[j][i]
+            }
+            newarr.push(sum)
+        }
+        return newarr
     }
     
 }
