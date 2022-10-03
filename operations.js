@@ -64,6 +64,11 @@ funcs = {
             }
         }
     },
+    'int':function(ms,name){
+        setInterval(function(){
+            compile(funcs.def[name])
+        },ms)
+    },
     def:{ 
 
     }
