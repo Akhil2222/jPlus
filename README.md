@@ -10,3 +10,14 @@ Clone the repo, and open *make.py*. Run this file, and enter in the filename (**
 
 ## How to run the file
 Open the HTML, and run it.
+
+# Commands
+## Functions
+###Rect
+###Log
+###Var
+###Func
+###If
+###Loop
+###Int
+## Operators
