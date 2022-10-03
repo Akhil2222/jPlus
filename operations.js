@@ -217,7 +217,20 @@ types = {
             newarr.push(sum)
         }
         return newarr
+    },
+    '+(':function(arr){
+        return this['+'](...arr)
+    },
+    '-(':function(arr){
+        return this['-'](...arr)
+    },
+    '*(':function(arr){
+        return this['*'](...arr)
+    },
+    '/(':function(arr){
+        return this['/'](...arr)
     }
+
     
 }
 
