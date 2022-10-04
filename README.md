@@ -82,9 +82,9 @@ Turns *bool* into the opposite boolean
 ### >|*a*,*b*
 Checks if *a* is greater than *b*
 ### &|*cond 1*,*cond 2*,...*cond n*
-CHecks if all of the conditions are true
+Checks if all of the conditions are true
 ### v|*cond 1*,*cond 2*,...*cond n*
-CHecks if all of the conditions are true
+Checks if one of the conditions are true
 
 ## Miscellaneous Operators 
 ### ?|*question*
