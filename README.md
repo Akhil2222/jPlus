@@ -100,4 +100,5 @@ Returns the elements at index *index* in the list *list*
 |  ...  | ...  |  ... |  ... | ... | ...  |
 | List 10 | 1    | 2    | 3    | ... | 90   |
 |Return | 10   | 20   | 30   | ... | 900  |
+
 Command: +<|{list 1,{list 2,{list 3, ... {list 10
