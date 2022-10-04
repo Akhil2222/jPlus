@@ -61,7 +61,7 @@ Finds the remainder of a/b
 Returns *a*^*b*
 
 ## Type definition operators
-### `|*str*
+### \`|*str*
 Creates a string/makes a string from a number/boolean. **Note: You don't have to do this to make a string.**
 ### #|*str*
 Creates a number/makes a string/boolean into a number
@@ -69,7 +69,7 @@ Creates a number/makes a string/boolean into a number
 Makes a string into a boolean
 
 ## String operators
-### `\*|*str*,*num*
+### \`\*|*str*,*num*
 Duplicates *str* *num* times
 ### ~|*str 1*,*str 2*,...*str n*
 Adds all of the strings
@@ -81,6 +81,10 @@ Checks if everything mentioned is equal to each other
 Turns *bool* into the opposite boolean
 ### >|*a*,*b*
 Checks if *a* is greater than *b*
+### &|*cond 1*,*cond 2*,...*cond n*
+CHecks if all of the conditions are true
+### v|*cond 1*,*cond 2*,...*cond n*
+CHecks if all of the conditions are true
 
 ## Miscellaneous Operators 
 ### ?|*question*
@@ -91,7 +95,7 @@ Returns a random number between *l* and *h* rounded to the nearest *s*
 ## List definition operators
 ### #<|*num 1*,*num 2*...*num n*
 Makes a list filled with numbers
-### `<|*str 1*,*str 2*...*str n*
+### \`<|*str 1*,*str 2*...*str n*
 Makes a list filled with strings
 ### !<|*bool 1*,*bool 2*...*bool n*
 Makes a list filled with booleans
