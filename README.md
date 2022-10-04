@@ -107,7 +107,7 @@ Concatanates the lists
 Returns the elements at index *index* in the list *list*
 ### L|*list*
 Returns the length of the list or string *list*
-#### ** For +, *, -, /, ~, =, &, and v, put a < to make a list that does the operation to multiple lists, like the table portays below or a ) to do that operation to every element in the array. ** 
+#### **For +, *, -, /, ~, =, &, and v, put a < to make a list that does the operation to multiple lists, like the table portays below or a ) to do that operation to every element in the array.** 
 
 | Lists | El 1 | El 2 | El 3 | ... | El 90 |
 | ----- | ---- | ---- | ---- | --- | ---- |
