@@ -43,6 +43,8 @@ Makes an image, but the position is a list
 ### keybind: *key*; *func*
 Binds a key to a function
 ## Operators
+## Number operations
+
 ### +|*num 1*,*num 2*...*num n*
 Adds all of the arguments together
 ### -|*num 1*,*num 2*...*num n*
@@ -57,38 +59,50 @@ Divides the rest of the arguments from the fisrt argument,and rounds the final a
 Finds the remainder of a/b
 ### ^|*num a*,*num b*
 Returns *a*^*b*
-### +[|*list 1*,*list 2*...*list n*
-Concatanates the lists
+
+## Type definition operators
 ### `|*str*
 Creates a string/makes a string from a number/boolean. **Note: You don't have to do this to make a string.**
 ### #|*str*
 Creates a number/makes a string/boolean into a number
 ### !|*str*
 Makes a string into a boolean
-### #<|*num 1*,*num 2*...*num n*
-Makes a list filled with numbers
-### `<|*str 1*,*str 2*...*str n*
-Makes a list filled with strings
-### !<|*bool 1*,*bool 2*...*bool n*
-Makes a list filled with booleans
+
+## String operators
 ### `\*|*str*,*num*
 Duplicates *str* *num* times
 ### ~|*str 1*,*str 2*,...*str n*
 Adds all of the strings
-### ?|*question*
-Returns a prompt with the question *question*
-### L|*list*
-Returns the length of the list or string *list*
+
+## Boolean operators
 ### =|*a1*,*a2*...*an*
 Checks if everything mentioned is equal to each other
 ### x|*bool*
 Turns *bool* into the opposite boolean
 ### >|*a*,*b*
 Checks if *a* is greater than *b*
+
+## Miscellaneous Operators 
+### ?|*question*
+Returns a prompt with the question *question*
 ### #?|*l*,*h*,*s*
 Returns a random number between *l* and *h* rounded to the nearest *s*
+
+## List definition operators
+### #<|*num 1*,*num 2*...*num n*
+Makes a list filled with numbers
+### `<|*str 1*,*str 2*...*str n*
+Makes a list filled with strings
+### !<|*bool 1*,*bool 2*...*bool n*
+Makes a list filled with booleans
+
+## List operators
+### +[|*list 1*,*list 2*...*list n*
+Concatanates the lists
 ### E|*list*,*index*
 Returns the elements at index *index* in the list *list*
+### L|*list*
+Returns the length of the list or string *list*
 #### ** For +, *, -, /, ~, =, &, and v, put a < to make a list that does the operation to multiple lists, like the table portays below or a ) to do that operation to every element in the array. ** 
 
 | Lists | El 1 | El 2 | El 3 | ... | El 90 |
