@@ -12,8 +12,7 @@ Clone the repo, and open *make.py*. Run this file, and enter in the filename (**
 ## How to run the file
 Open the HTML, and run it.
 
-# Commands
-## Functions
+# Functions
 ### Frect:*x*;*y*;*w*;*h*
 Makes a rectangle
 ### Flrect:*posarr*;*dimarr*
@@ -42,7 +41,7 @@ Makes an image
 Makes an image, but the position is a list
 ### keybind: *key*; *func*
 Binds a key to a function
-## Operators
+# Operators
 ## Number operations
 
 ### +|*num 1*,*num 2*...*num n*
