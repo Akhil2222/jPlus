@@ -162,6 +162,18 @@ types = {
     '`':function(str){ //Create a string
         return `${str}`
     },
+    '#':function(a){ //Create a number
+        return Number(a)
+    },
+    '!':function(a){
+        if(a == 'true'){
+            return true
+        }else if(a == 'false'){
+            return false
+        }else{
+            return undefined
+        }
+    },
     '#<':function(...list){ //Create a number list
         var retarr = []
         for(i of list){
@@ -170,11 +182,16 @@ types = {
         return retarr
     },
     '`<':function(...list){ //Create a string list
-        return [list]
+        return list
     },
-    '#':function(a){ //Create a number
-        return Number(a)
+    '!<':function(...bools){
+        newarr = []
+        for(var i of bools){
+            newarr.push(this['!'](i))
+        }
+        return newarr
     },
+    
     '`*':function(str,num){ //Dupilcate strings
         retstr = ''
         for(var i = 0;i<Number(num);i++){
@@ -182,24 +199,41 @@ types = {
         }
         return retstr
     },
-    '`+':function(...str){ // Add any amount of strings
+    '~':function(...str){ // Add any amount of strings
         var retstr = ''
         return retstr.concat(...str)
     },
     '?':function(quest){ //Prompt an input
         return prompt(quest)
     },
-    'L':function(list){ //Get the length of a list or string
-        return list.length
+   
+    '=':function(...items){ //Check if n values are equal
+        for(i of items){
+            if(items[0] != i){
+                return false
+            }
+        }
+        return true
     },
-    '=':function(a,b){ //Check if two values are equal
-        return a == b
-    },
-    'x':function(a,b){ //Check if one value is not equal to the other
-        return a != b
+    'x':function(cond){ //Check if one value is not equal to the other
+        return cond != true
     },
     '>':function(a,b){ //Check if a > b
         return a > b
+    },
+    '&':function(...cond){
+        var state = true
+        for(var i of cond){
+            state = state && i
+        }
+        return state
+    },
+    'v':function(...cond){
+        var state = cond[0]
+        for(var i of cond){
+            state = state || i
+        }
+        return state
     },
     '#?':function(l,h,s=1){ //Make a random number
         return Math.round((Number(l)+Math.random()*(Number(h)-Number(l)))/Number(s))*Number(s)
@@ -207,14 +241,94 @@ types = {
     'E':function(list,index){ //Get an element from a list
         return list[index]
     },
+    'L':function(list){ //Get the length of a list or string
+        return list.length
+    },
     '+<':function(...arr){
         newarr = [];
         for(i in arr[0]){
-            sum = 0;
+            holdarr = []
             for(j in arr){
-                sum += arr[j][i]
+                holdarr.push(arr[j][i])
             }
-            newarr.push(sum)
+            newarr.push(this['+'](...holdarr))
+        }
+        return newarr
+    },
+    '-<':function(...arr){
+        newarr = [];
+        for(i in arr[0]){
+            holdarr = []
+            for(j in arr){
+                holdarr.push(arr[j][i])
+            }
+            newarr.push(this['-'](...holdarr))
+        }
+        return newarr
+    },
+    '*<':function(...arr){
+        newarr = [];
+        for(i in arr[0]){
+            holdarr = []
+            for(j in arr){
+                holdarr.push(arr[j][i])
+            }
+            newarr.push(this['*'](...holdarr))
+        }
+        return newarr
+    },
+    '/<':function(...arr){
+        newarr = [];
+        for(i in arr[0]){
+            holdarr = []
+            for(j in arr){
+                holdarr.push(arr[j][i])
+            }
+            newarr.push(this['/'](...holdarr))
+        }
+        return newarr
+    },
+    '~<':function(...arr){
+        newarr = [];
+        for(i in arr[0]){
+            holdarr = []
+            for(j in arr){
+                holdarr.push(arr[j][i])
+            }
+            newarr.push(this['~'](...holdarr))
+        }
+        return newarr
+    },
+    '=<':function(...arr){
+        newarr = [];
+        for(i in arr[0]){
+            holdarr = []
+            for(j in arr){
+                holdarr.push(arr[j][i])
+            }
+            newarr.push(this['='](...holdarr))
+        }
+        return newarr
+    },
+    '&<':function(...arr){
+        newarr = [];
+        for(i in arr[0]){
+            holdarr = []
+            for(j in arr){
+                holdarr.push(arr[j][i])
+            }
+            newarr.push(this['&'](...holdarr))
+        }
+        return newarr
+    },
+    'v<':function(...arr){
+        newarr = [];
+        for(i in arr[0]){
+            holdarr = []
+            for(j in arr){
+                holdarr.push(arr[j][i])
+            }
+            newarr.push(this['v'](...holdarr))
         }
         return newarr
     },
@@ -229,12 +343,46 @@ types = {
     },
     '/(':function(arr){
         return this['/'](...arr)
+    },
+    '~(':function(arr){
+        return this['~'](...arr)
+    },
+    '=(':function(arr){
+        return this['='](...arr)
+    },
+    '&(':function(arr){
+        return this['&'](...arr)
+    },
+    'v(':function(arr){
+        return this['v'](...arr)
     }
-
-    
 }
 
 variables = {
 
 }
 //----
+compile('var:x;`<|a,b,c,d')
+compile('var:y;`<|a,b,c,d')
+compile('var:z;`<|x,k,c,d')
+compile('var:a;#<|1,2,3,4')
+compile('var:b;#<|1,2,3,4,5')
+compile('var:mike;=|1,1,1')
+compile('var:eagle;=|1,1,2,1')
+compile('var:bob;=|1,1,1,1')
+compile('var:amigood;!|true')
+compile('log:=<|{x,{y')
+compile('log:=<|{x,{y,{z')
+compile('log:~(|{x')
+compile('log:~<|{x,{y,{z')
+compile('log:+<|{a,{b')
+compile('log:&|{mike,{eagle,{bob')
+compile('log:v|{mike,{eagle,{bob')
+compile('var:isit;!<|true,true,false,false')
+compile('var:lies;!<|false,false,false,false')
+compile('var:honest;!<|true,true,true,true')
+compile('log:=(|{isit;=(|{lies;=(|{honest;---;&(|{isit;&(|{lies;&(|{honest;---;v(|{isit;v(|{lies;v(|{honest')
+compile('log:x|{amigood')
+compile('log:&<|{isit,{honest;&<|{isit,{lies;&<|{lies,{honest')
+compile('log:v<|{isit,{honest;v<|{isit,{lies;v<|{lies,{honest')
+compile('log:~|abcd,efgh,ijkl')

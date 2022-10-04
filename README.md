@@ -30,58 +30,74 @@ Creates/sets the function *name*. NOTE: everything between the function definiti
 Ends a function
 ### runfunc:*name*
 Runs the function *name"
-### If:*cond*,*name*
+### If:*cond*;*name*
 If *cond* is true, then the function "name" will run
-### Loop:*iter*,*name*
+### Loop:*iter*;*name*
 Loops the function *name* *iter* amount of times
-### Int:*ms*,*name*
+### Int:*ms*;*name*
 Runs the function *name* at an interval of *ms* milliseconds
-### Img:*x*,*y*,*url*,*scale*
+### Img:*x*;*y*;*url*;*scale*
 Makes an image
-### limg:*pos*,*url*,*scale*
+### limg:*pos*;*url*;*scale*
 Makes an image, but the position is a list
-### keybind: *key*, *func*
+### keybind: *key*; *func*
 Binds a key to a function
 ## Operators
-### +|*a1*,*a2*...*an*
+### +|*num 1*,*num 2*...*num n*
 Adds all of the arguments together
-### -|*a1*,*a2*...*an*
+### -|*num 1*,*num 2*...*num n*
 Subtracts the rest of the arguments from the fisrt argument
-### *|*a1*,*a2*...*an*
+### \*|*num 1*,*num 2*...*num n*
 Multiplies all of the arguments together
-### /|*a1*,*a2*...*an*
+### /|*num 1*,*num 2*...*num n*
 Divides the rest of the arguments from the fisrt argument
-### //|*a1*,*a2*...*an*
+### //|*num 1*,*num 2*...*num n*
 Divides the rest of the arguments from the fisrt argument,and rounds the final answer
-### %|*a*,*b*
+### %|*num a*,*num b*
 Finds the remainder of a/b
-### ^|*a*,*b*
+### ^|*num a*,*num b*
 Returns *a*^*b*
-### +[|*a1*,*a2*...*an*
+### +[|*list 1*,*list 2*...*list n*
 Concatanates the lists
 ### `|*str*
-Creates a string. **Note: You don't have to do this to make a string.**
-### #<|*a1*,*a2*...*an*
+Creates a string/makes a string from a number/boolean. **Note: You don't have to do this to make a string.**
+### #|*str*
+Creates a number/makes a string/boolean into a number
+### !|*str*
+Makes a string into a boolean
+### #<|*num 1*,*num 2*...*num n*
 Makes a list filled with numbers
-### `<|*a1*,*a2*...*an*
+### `<|*str 1*,*str 2*...*str n*
 Makes a list filled with strings
-### #|*a*
-Makes a string into a number
-### `*|*str*,*num*
+### !<|*bool 1*,*bool 2*...*bool n*
+Makes a list filled with booleans
+### `\*|*str*,*num*
 Duplicates *str* *num* times
-### `+|*str1*,*str2*,...*strn*
+### ~|*str 1*,*str 2*,...*str n*
 Adds all of the strings
 ### ?|*question*
 Returns a prompt with the question *question*
 ### L|*list*
 Returns the length of the list or string *list*
-### =|*a*,*b*
-Checks if *a* is equal to *b*
-### x|*a*,*b*
-Checks if *a* is not equal to *b*
+### =|*a1*,*a2*...*an*
+Checks if everything mentioned is equal to each other
+### x|*bool*
+Turns *bool* into the opposite boolean
 ### >|*a*,*b*
 Checks if *a* is greater than *b*
 ### #?|*l*,*h*,*s*
 Returns a random number between *l* and *h* rounded to the nearest *s*
 ### E|*list*,*index*
 Returns the elements at index *index* in the list *list*
+#### ** For +, *, -, /, ~, =, &, and v, put a < to make a list that does the operation to multiple lists, like the table portays below or a ) to do that operation to every element in the array. ** 
+
+| Lists | El 1 | El 2 | El 3 | ... | El 90 |
+| ----- | ---- | ---- | ---- | --- | ---- |
+| List 1 | 1    | 2    | 3    | ... | 90   |
+| List 2 | 1    | 2    | 3    | ... | 90   |
+| List 3 | 1    | 2    | 3    | ... | 90   |
+| List 4 | 1    | 2    | 3    | ... | 90   |
+|  ...  | ...  |  ... |  ... | ... | ...  |
+| List 10 | 1    | 2    | 3    | ... | 90   |
+|Return | 10   | 20   | 30   | ... | 900  |
+Command: +<|{list 1,{list 2,{list 3, ... {list 10
