@@ -6,6 +6,7 @@ No running operators outside of a function
 Only put the needed arguments 
 At The end of you code, make sure that there is no line brakes
 Not case-sensitive
+Every operator requiring numbers does not actually need you to explicitly define taht that number is a number
 ## How to make a .jpl file
 Clone the repo, and open *make.py*. Run this file, and enter in the filename (**DO NOT INCLUDE THE FILE EXTENSTION**)
 
