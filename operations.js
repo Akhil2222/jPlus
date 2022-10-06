@@ -58,10 +58,11 @@ funcs = {
         context.drawImage(img,...p,img.width*scale,img.height*scale)
     },
     'keybind':function(key,name){
+        funcs.keydown += `if(e.key == '${key}'){
+            compile(funcs.def['${name}'])
+        }`
         document.onkeydown = function(e){
-            if(e.key == key){
-                compile(funcs.def[name])
-            }
+            eval(funcs.keydown)
         }
     },
     'int':function(ms,name){
@@ -71,8 +72,8 @@ funcs = {
     },
     def:{ 
 
-    }
-
+    },
+    keydown:''
 }
 function compile(str){
     var line = str.split('\n')
